@@ -13,11 +13,6 @@ SimpleCov.start
 ActiveRecord::Migration.maintain_test_schema!
 WebMock.disable_net_connect!(allow_localhost: true)
 
-RSpec.configure do |config|
-  config.include Devise::Test::ControllerHelpers, type: :controller
-  config.use_transactional_fixtures = true
-  config.infer_spec_type_from_file_location!
-end
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
