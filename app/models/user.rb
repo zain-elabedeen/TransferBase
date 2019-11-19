@@ -31,6 +31,7 @@
 
 
 
+
 class User < ApplicationRecord
   include Devise::JWT::RevocationStrategies::JTIMatcher
   include Tokenizable
