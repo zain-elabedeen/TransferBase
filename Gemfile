@@ -10,7 +10,7 @@ gem 'bootsnap', '~> 1.3.0'
 # Basic auth
 gem 'devise', '~> 4.4.3'
 # API auth
-gem 'devise_token_auth', '~> 1.1.0'
+gem 'devise-jwt', '~> 0.5.9'
 # Postgres database 
 gem 'pg', '~> 0.18.2'
 # Web server
