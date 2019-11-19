@@ -8,15 +8,15 @@ gem 'graphql', '~> 1.9.15'
 # Boot rails faster
 gem 'bootsnap', '~> 1.3.0'
 # Basic auth
-gem 'devise', '~> 4.4.3'
+gem 'devise', '~> 4.7.1'
 # API auth
-gem 'devise_token_auth', '~> 1.1.0'
+gem 'devise-jwt', '~> 0.5.9'
 # Postgres database 
 gem 'pg', '~> 0.18.2'
 # Web server
 gem 'puma', '~> 3.0'
 # CORS config
-gem 'rack-cors', '~> 0.4.0'
+gem 'rack-cors', '~> 1.0.4'
 # enhancing the ruby shell
 gem 'awesome_print'
 
