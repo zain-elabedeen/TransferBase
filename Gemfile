@@ -16,7 +16,7 @@ gem 'pg', '~> 0.18.2'
 # Web server
 gem 'puma', '~> 3.0'
 # CORS config
-gem 'rack-cors', '~> 0.4.0'
+gem 'rack-cors', '~> 1.0.5'
 # enhancing the ruby shell
 gem 'awesome_print'
 
