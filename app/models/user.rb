@@ -32,6 +32,7 @@
 
 
 
+
 class User < ApplicationRecord
   include Devise::JWT::RevocationStrategies::JTIMatcher
   include Tokenizable
@@ -40,4 +41,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :jwt_authenticatable, jwt_revocation_strategy: self
+
+
+  has_one :account, dependent: :destroy
+
+  validates :email, presence: true
+  validates :full_name, presence: true
 end
