@@ -8,6 +8,10 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'simplecov'
 
+include GraphQL::MutationsHelper
+include GraphQL::ParseResponse
+include GraphQL::MutationVariables
+
 SimpleCov.start
 
 ActiveRecord::Migration.maintain_test_schema!

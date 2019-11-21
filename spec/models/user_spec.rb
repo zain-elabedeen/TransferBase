@@ -16,4 +16,7 @@
 require 'rails_helper'
 
 describe User do
+  it "has a valid factory" do
+    expect(build(:user, password: Faker::Internet.password(10))).to be_valid
+  end
 end
