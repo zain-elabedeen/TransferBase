@@ -13,5 +13,13 @@ module Types
 
       User.all
     end
+
+    field :list_payouts, [Types::PayoutType], null: true
+    # TODO: paginate and move to payout module/class
+    def list_payouts
+      return nil if !context[:current_user]
+
+      context[:current_user].account.payouts.completed
+    end
   end
 end
