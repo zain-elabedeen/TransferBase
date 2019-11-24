@@ -10,9 +10,11 @@ class GraphqlController < ApplicationController
     operation_name = params[:operationName]
     context = {
       # Query context goes here, for example:
-      # current_user: current_user
+      session: session,
+      current_user: current_user
     }
     result = AppSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
+
     render json: result
   rescue => e
     raise e unless Rails.env.development?
@@ -44,5 +46,19 @@ class GraphqlController < ApplicationController
     logger.error e.backtrace.join("\n")
 
     render json: { error: { message: e.message, backtrace: e.backtrace }, data: {} }, status: 500
+  end
+
+  private
+
+  def current_user
+    return unless request.headers['Authorization'].present?
+
+    crypt = ActiveSupport::MessageEncryptor.new(ENV['SECRET_KEY_BASE'].byteslice(0..31))
+    token = crypt.decrypt_and_verify request.headers['Authorization']
+
+    user_id = token.gsub('user-id:', '').to_i
+    User.find_by(user_id)
+  rescue ActiveSupport::MessageVerifier::InvalidSignature
+    nil
   end
 end
