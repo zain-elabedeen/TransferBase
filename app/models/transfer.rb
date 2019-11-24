@@ -20,6 +20,7 @@
 #
 
 
+
 class Transfer < ApplicationRecord
     has_many :payouts, dependent: :destroy
 

@@ -18,5 +18,47 @@ module GraphQL
         }
       )
     end
+
+    def create_transfer_mutation
+      %(
+        mutation createTrasnfer(
+          $receiverAccountId: ID!,
+          $targetCurrency: String!, 
+          $amount: Float!
+        ) {
+          createTransfer(
+            receiverAccountId: $receiverAccountId,
+            targetCurrency: $targetCurrency,
+            amount: $amount
+          ) {
+              id
+              senderAccountId
+              receiverAccountId
+              amount,
+              status
+            }
+        }        
+      )
+    end
+
+    def sign_in_mutation
+      %(
+        mutation signIn(
+          $email: String!,
+          $password: String!,
+        ) {
+          signIn(
+            email: $email,
+            password: $password,
+          ) {
+              user {
+                id
+                name
+              }
+              token
+            }
+        }        
+      )
+    end
   end
 end

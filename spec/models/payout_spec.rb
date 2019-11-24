@@ -17,6 +17,7 @@
 #  index_payouts_on_transfer_id  (transfer_id)
 #
 
+
 require 'rails_helper'
 
 RSpec.describe Payout, type: :model do

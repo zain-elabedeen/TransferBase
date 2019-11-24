@@ -17,6 +17,7 @@
 #  index_payouts_on_transfer_id  (transfer_id)
 #
 
+
 FactoryBot.define do
   factory :payout do
     amount   { 10000 }
