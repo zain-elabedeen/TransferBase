@@ -29,4 +29,9 @@ class Account < ApplicationRecord
 
   NATIVE_CURRENCY = 'USD'
   ACCEPTED_CURRENCIES = %w(USD GBP EUR)
+
+
+  def balance(currency)
+    payouts.currency(currency).success.sum(:amount)
+  end
 end
