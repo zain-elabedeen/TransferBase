@@ -16,7 +16,10 @@
 
 
 
+
+
 class Account < ApplicationRecord
+  has_many :payouts
   has_many :sent_transfers, foreign_key: 'sender_account_id', class_name: "Transfer"
   has_many :received_transfers, foreign_key: 'receiver_account_id', class_name: "Transfer"
     

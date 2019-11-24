@@ -21,6 +21,8 @@
 
 
 class Transfer < ApplicationRecord
+    has_many :payouts, dependent: :destroy
+
     belongs_to :sender_account, foreign_key: 'sender_account_id', class_name: 'Account'
     belongs_to :receiver_account, foreign_key: 'receiver_account_id', class_name: 'Account'
     
