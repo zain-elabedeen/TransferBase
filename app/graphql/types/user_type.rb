@@ -1,6 +1,7 @@
 module Types
-    class UserType < BaseObject
-      field :id, ID, null: false
-      field :name, String, null: false
-    end
+  class UserType < BaseObject
+    field :id, ID, null: false
+    field :name, String, null: false
+    field :account, Types::AccountType, null: false
   end
+end
