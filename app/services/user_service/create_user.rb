@@ -17,7 +17,26 @@ module UserService
         account = Account.create!(user: user)
       end
 
+      initialize_user_account(account)
+
       user
+    end
+
+    private
+
+    def initialize_user_account(account)
+      # Create initial 1000 USD transfer from the GOLDEN USER account
+      golden_user = User.includes(:account).find_by(email: ENV['GOLD_EMAIL'])
+
+      return if !golden_user
+
+      TransferService::CreateTransfer.call({
+        sender_account_id: golden_user.account.id,
+        receiver_account_id: account.id,
+        source_currency: Account::NATIVE_CURRENCY,
+        target_currency: Account::NATIVE_CURRENCY,
+        amount: 1000,
+      })
     end
   end
 end
