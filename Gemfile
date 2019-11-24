@@ -15,8 +15,12 @@ gem 'pg', '~> 0.18.2'
 gem 'puma', '~> 3.0'
 # CORS config
 gem 'rack-cors', '~> 1.0.4'
-# enhancing the ruby shell
+# Enhancing the ruby shell
 gem 'awesome_print'
+# Http client library
+gem 'faraday', '~> 0.17.0'
+# A collection of useful Faraday middleware
+gem 'faraday_middleware', '~> 0.13.1'
 
 group :development, :test do
   # Detect N+1 
