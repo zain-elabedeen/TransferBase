@@ -3,7 +3,7 @@ module Mutations
     class CreateTransfer < BaseMutation
       argument :receiver_account_id, ID, required: true
       argument :target_currency, String, required: true
-      argument :amount, Float, required: true
+      argument :amount, String, required: true
   
       type Types::TransferType
   

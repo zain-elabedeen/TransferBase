@@ -80,7 +80,7 @@ describe Mutations::Transfers::CreateTransfer, type: :request do
         expect(data).to include(
           'id'                  => be_present,
           'status'              => 'error',
-          'amount'              => 1000.0,
+          'amount'              => '1000.0',
           'senderAccountId'     => sender_account.id,
           'receiverAccountId'   => receiver_account.id
         )
@@ -116,7 +116,7 @@ describe Mutations::Transfers::CreateTransfer, type: :request do
         expect(data).to include(
           'id'                  => be_present,
           'status'              => 'success',
-          'amount'              => 1000.0,
+          'amount'              => '1000.0',
           'senderAccountId'     => sender_account.id,
           'receiverAccountId'   => receiver_account.id
         )

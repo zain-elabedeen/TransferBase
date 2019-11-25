@@ -24,7 +24,7 @@ FactoryBot.define do
   factory :transfer do
     source_currency { 'USD' }
     target_currency { 'EUR' }
-    amount          { 1000 }
+    amount          { '1000' }
     exchange_rate   { 0.75 }
     
     association :sender_account, factory: :account

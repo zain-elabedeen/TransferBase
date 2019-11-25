@@ -24,7 +24,7 @@ module GraphQL
         mutation createTrasnfer(
           $receiverAccountId: ID!,
           $targetCurrency: String!, 
-          $amount: Float!
+          $amount: String!
         ) {
           createTransfer(
             receiverAccountId: $receiverAccountId,
