@@ -1,5 +1,5 @@
 .git
-.env*
+.env
 /config/database.yml
 *.rbc
 *.swp
