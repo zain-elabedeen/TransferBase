@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("DATABASE_CONNECTION_POOL") { 5 } %>
+
+development:
+  <<: *default
+  database: <%= ENV.fetch('DB_NAME', 'transfer_development') %>
+  host: <%= ENV.fetch('DB_HOST') %>
+  port: <%= ENV.fetch('DB_PORT') %>
+  username: <%= ENV.fetch('DB_USERNAME') %>
+  password: <%= ENV.fetch('DB_PASSWORD') %>
+
+test:
+  <<: *default
+  database: <%= ENV.fetch('DB_NAME', 'transfer_test') %>
+  host: <%= ENV.fetch('DB_HOST') %>
+  port: <%= ENV.fetch('DB_PORT') %>
+  username: <%= ENV.fetch('DB_USERNAME') %>
+  password: <%= ENV.fetch('DB_PASSWORD') %>

@@ -1,6 +1,5 @@
 .git
 .env
-/config/database.yml
 *.rbc
 *.swp
 capybara-*.html
