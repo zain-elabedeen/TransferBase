@@ -17,14 +17,8 @@ gem 'puma', '~> 3.0'
 gem 'rack-cors', '~> 1.0.4'
 # Enhancing the ruby shell
 gem 'awesome_print'
-# Http client library
-gem 'faraday', '~> 0.17.0'
-# A collection of useful Faraday middleware
-gem 'faraday_middleware', '~> 0.13.1'
 
 group :development, :test do
-  # Detect N+1 
-  gem 'bullet', '~> 5.7.5'
   # Test data
   gem 'factory_bot_rails', '~> 4.8.2'
   # Debugger
@@ -40,8 +34,6 @@ group :development do
   gem 'annotate', '~> 2.6.5'
   # Better error page
   gem 'better_errors', '~> 2.1.1'
-  # Static analysis security
-  gem 'brakeman', '~> 4.4.0'
   # Desplay emails in browser
   gem 'letter_opener', '~> 1.4.1'
   # Code linter

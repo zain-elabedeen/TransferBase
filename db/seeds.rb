@@ -1,4 +1,4 @@
-gold = User.create(email: (ENV.fetch('GOLD_EMAIL', "gold@passbase.com"), name: 'Gold Bank', password: '12345!Aa')
+gold = User.create(email: ENV.fetch('GOLD_EMAIL', "gold@passbase.com"), name: 'Gold Bank', password: '12345!Aa')
 money_machine = Account.create(user: gold)
 
 transfer = Transfer.create!(

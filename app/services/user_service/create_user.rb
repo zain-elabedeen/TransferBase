@@ -26,7 +26,8 @@ module UserService
 
     def initialize_user_account(account)
       # Create initial 1000 USD transfer from the GOLDEN USER account
-      golden_user = User.includes(:account).find_by(email: ENV['GOLD_EMAIL'])
+
+      golden_user = User.find_by(email: ENV['GOLD_EMAIL'])
 
       return if !golden_user
 
