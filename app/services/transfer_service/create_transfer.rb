@@ -8,6 +8,10 @@ module TransferService
       throw ArgumentError.new('Required arguments :amount missing') if tranfser_params[:amount].nil?
 
       @transfer_params = tranfser_params
+
+
+      # TODO: get exchange rates using a live API
+      @exchange_rate = 0.5
     end
 
     def call
@@ -25,18 +29,12 @@ module TransferService
     private
 
     def create_transfer
-      # Get exchage rate via currency layer API
-      exchange_rate = CurrencyLayer::LiveRates.get_rate(
-        @transfer_params[:source_currency],
-        @transfer_params[:target_currency]
-      )
-
       Transfer.create!(
         sender_account_id:   @transfer_params[:sender_account_id],
         receiver_account_id: @transfer_params[:receiver_account_id],
         source_currency:     @transfer_params[:source_currency],
         target_currency:     @transfer_params[:target_currency],
-        exchange_rate:       exchange_rate,
+        exchange_rate:       @exchange_rate,
         amount:              @transfer_params[:amount],
         status:              'processing' 
       )
