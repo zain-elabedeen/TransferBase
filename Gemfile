@@ -12,7 +12,7 @@ gem 'bcrypt', '~> 3.1.7'
 # Postgres database 
 gem 'pg', '~> 0.18.2'
 # Web server
-gem 'puma', '~> 3.0'
+gem 'puma', '~> 4.3'
 # CORS config
 gem 'rack-cors', '~> 1.0.4'
 # Enhancing the ruby shell
