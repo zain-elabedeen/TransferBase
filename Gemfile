@@ -33,7 +33,7 @@ group :development do
   # Doc the schema in the models
   gem 'annotate', '~> 2.6.5'
   # Better error page
-  gem 'better_errors', '~> 2.1.1'
+  gem 'better_errors', '~> 2.9.1'
   # Desplay emails in browser
   gem 'letter_opener', '~> 1.4.1'
   # Code linter
